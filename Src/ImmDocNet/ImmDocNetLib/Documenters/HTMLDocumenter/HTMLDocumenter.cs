@@ -603,7 +603,7 @@ namespace Imm.ImmDocNetLib.Documenters.HTMLDocumenter
                                                         NAMESPACES_INDEX_FILE_NAME);
 
 	  string filename = Utils.CombineMultiplePaths(outputDirectory, CONTENTS_DIRECTORY, GetAliasName(indexFileName));
-			
+          
 	  FileStream fs = new FileStream(filename, FileMode.Create, FileAccess.Write);
       StreamWriter sw = new StreamWriter(fs);
 
@@ -3024,7 +3024,7 @@ namespace Imm.ImmDocNetLib.Documenters.HTMLDocumenter
       {
         sw.WriteLine("[OPTIONS]");
         sw.WriteLine("Compatibility=1.1 or later");
-        sw.WriteLine("Default topic={0}", "Contents\\0\\1.html");
+        sw.WriteLine("Default topic={0}", "Contents/0/1.html");
         sw.WriteLine("Compiled file={0}", CHM_NAME);
         if (File.Exists(Path.Combine(outputDirectory, HHC_NAME)))
         {
@@ -3833,7 +3833,7 @@ namespace Imm.ImmDocNetLib.Documenters.HTMLDocumenter
 
       if (relative)
       {
-        result = @"..\..\" + CONTENTS_DIRECTORY + Path.DirectorySeparatorChar + fileNamesMappings[fileName];
+        result = @"../../" + CONTENTS_DIRECTORY + Path.DirectorySeparatorChar + fileNamesMappings[fileName];
       }
       else
       {
